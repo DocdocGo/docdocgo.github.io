@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="2Or5W6awvluXAK86N1iQRPYGiHlzA0vIUw45OSxC">
+    <title>东北大学测温验证平台</title>
+    <link href="./css/visitor.css" rel="stylesheet">
+    <style>
+        @-webkit-keyframes pulse {
+            50% {
+                -webkit-transform: scale3d(1.2, 1.2, 1.2);
+                transform: scale3d(1.2, 1.2, 1.2);
+            }
+        }
+        @keyframes  pulse {
+            50% {
+                -webkit-transform: scale3d(1.2, 1.2, 1.2);
+                transform: scale3d(1.2, 1.2, 1.2);
+            }
+        }
+        .list-group {
+            padding: 1em;
+        }
+        .list-group-item {
+            font-size: 1.4em;
+            padding: 0.1em;
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="card border-0 text-center" style="color: #006633">
+        <div class="card-body">
+            <h2 class="card-title p-2">东北大学通行验证</h2>
+
+            <div class="animated infinite pulse p-2">
+                <i class="fas fa-arrow-circle-up" style="font-size: 14em;"></i>
+            </div>
+            <p class="card-text p-2" style="font-size: 1.3em;"></p>
+
+        </div>
+    </div>
+
+    <ul class="list-group list-group-flush" style="background-color: #006633"></ul>
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+(function()
+{
+    var time = new Date();
+    var year = time.getFullYear();
+    var mon = time.getMonth() + 1;
+    var mon_string = mon.toString();
+    if (mon_string.length == 1) mon_string = '0'+mon.toString();
+    var date = time.getDate();
+	var date_string = date.toString();
+	if (date_string.length == 1) date_string = '0'+date.toString();
+    var hour = time.getHours();
+	var hour_string = hour.toString();
+	if (hour_string.length == 1) hour_string = '0'+hour.toString();
+    var minu = time.getMinutes();
+	var minu_string = minu.toString();
+	if (minu_string.length == 1) minu_string = '0'+minu.toString();
+    var sec = time.getSeconds();
+	var sec_string = sec.toString();
+	if (sec_string.length == 1) sec_string = '0'+sec.toString();
+
+    var time_string = year.toString() + '-' + mon_string + '-' + date_string + ' ' + hour_string + ':' + minu_string + ':' + sec_string;
+    document.getElementsByClassName("card-text")[0].innerText = "时间：" + time_string;
+
+    var urlinfo = window.location.href;
+    var stuinfo = decodeURI(urlinfo.split('?')[1]);
+    document.getElementsByClassName("list-group")[0].innerHTML = '<li class="list-group-item bg-transparent text-white d-flex"><div style="min-width: 4em; text-align-last: justify;">学工号</div>：<div>' + stuinfo.split('/')[1] + '</div></li>' + '<li class="list-group-item bg-transparent text-white d-flex"><div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div>' + stuinfo.split('/')[0] + '</div></li>' + '<li class="list-group-item bg-transparent text-white d-flex"><div style="min-width: 4em; text-align-last: justify;">验证位置</div>：<div>' + stuinfo.split('/')[2] + '</div></li>' + '<li class="list-group-item bg-transparent text-white d-flex"><div style="min-width: 4em; text-align-last: justify;">进出状态</div>：<div>进入</div></li>';
+})()
+</script>
