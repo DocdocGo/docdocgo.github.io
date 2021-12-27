@@ -41,21 +41,13 @@
                 <div data-v-1db03a06="" class="time">2021-12-27 18:34:18</div>
             </div>
 
-            <div id="ws" style="
-                display: none;
-                position: absolute;
-                height: 15%;
-                width: 100%;
-                background: #f5f5f5;
-                opacity: 1.0;
-            "></div>
-
-            <div align = left>
+            <div id = "info_box">
                 <input type="file" id="img" onchange="showImg(this.files)">
                 <div>学号: <input type="text" id="stuId" placeholder="10086" /> </div>
                 <div>姓名: <input type="text" id="stuName" placeholder="张三" /> </div>
                 <div>大门: <input type="text" id="port" placeholder="浑南校区东门" /> </div>
-                <input type="button" value="确定"/ onclick="update_info()">
+                <input type="button" value="确定" onclick="update_info()" />
+                <sub style="font-size: smaller;">本操作违反疫情管理办法，使用请自行承担一切责任！</sub>
             </div>
 
             <div data-v-1db03a06="" class="footer">
@@ -112,11 +104,16 @@
 
         var time_string = year.toString() + '-' + mon_string + '-' + date_string + ' ' + hour_string + ':' + minu_string + ':' + sec_string;
 
-        document.getElementById("ws").style.display = "block";
-        document.getElementsByClassName("time")[0].innerText = time_string;
+        // var stuId_len = document.getElementById("stuId").value.length;
+        // var stuName_len = ocument.getElementById("stuName").value.length;
+        // var port_len = document.getElementById("port").value.length;
+        // if(stuId_len < 1)
+        
         document.getElementsByClassName("code")[0].innerText = document.getElementById("stuId").value;
         document.getElementsByClassName("name")[0].innerText = document.getElementById("stuName").value[0] +"*";
         document.getElementsByClassName("address")[0].innerHTML = document.getElementById("port").value +
         '<span data-v-1db03a06=""> 入</span>';
+        document.getElementsByClassName("time")[0].innerText = time_string;
+        document.getElementById("info_box").innerHTML = "";
     }
 </script>
