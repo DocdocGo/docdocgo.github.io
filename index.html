@@ -8,54 +8,53 @@
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport">
     <link rel="icon" href="https://ecode.neu.edu.cn/ecode/favicon.ico">
     <title>e码通</title>
-    <link href="./css/app.3beeee47.css" rel="preload" as="style">
-    <link href="./css/chunk-vendors.fec8c032.css" rel="preload" as="style">
-    <link href="./css/chunk-vendors.fec8c032.css" rel="stylesheet">
-    <link href="./css/app.3beeee47.css" rel="stylesheet">
+    <link href="css/chunk-vendors.fec8c032.css" rel="stylesheet">
+    <link href="./css/app.7a56f377.css" rel="stylesheet">
 </head>
 
 <body><noscript><strong>We're sorry but neu-ecode-web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
     <div id="app">
-        <div data-v-1db03a06="">
-            <div data-v-1db03a06="" class="header">
-                <div data-v-1db03a06="" class="header-logo">
-                    <div data-v-1db03a06="" class="iconfont iconfont-left"></div>
-                    <div data-v-1db03a06="" class="iconfont-right"><span data-v-1db03a06=""
-                            class="iconfont"></span><span data-v-1db03a06="">码通</span></div>
+        <div data-v-30eea19e="" class="code-warp-green">
+            <div data-v-30eea19e="" class="header">
+                <div data-v-30eea19e="" class="header-logo">
+                    <div data-v-30eea19e="" class="iconfont iconfont-left"></div>
+                    <div data-v-30eea19e="" class="iconfont-right"><span data-v-30eea19e=""
+                            class="iconfont"></span><span data-v-30eea19e="">码通</span></div>
                 </div>
             </div>
-            <div data-v-1db03a06="" class="info-warp">
-                <div data-v-1db03a06="" class="avater">
-                    <img data-v-1db03a06="" src="" id="user_img">
-                    <span data-v-1db03a06="" class="iconfont iconfont-avater yes"></span>
+            <div data-v-30eea19e="" class="info-warp">
+                <div data-v-30eea19e="" class="avater">
+                    <img data-v-30eea19e="" src="" id="user_img">
+                    <span data-v-30eea19e="" class="iconfont iconfont-avater yes"></span>
                 </div>
-                <div data-v-1db03a06="" class="user">
-                    <div data-v-1db03a06="" class="name">张*</div>
-                    <div data-v-1db03a06="" class="code">10086</div>
+                <div data-v-30eea19e="" class="user">
+                    <div data-v-30eea19e="" class="name">张*</div>
+                    <div data-v-30eea19e="" class="code">10086</div>
                 </div>
-                <div data-v-1db03a06="" class="pass">
-                    <span data-v-1db03a06="">通行权限：</span>
-                    <span data-v-1db03a06="" class="yes">允许</span>
+                <div data-v-30eea19e="" class="pass">
+                    <span data-v-30eea19e="">通行权限：</span>
+                    <span data-v-30eea19e="" class="yes">允许</span>
                 </div>
-                <div data-v-1db03a06="" class="address">浑南校区东门<span data-v-1db03a06=""> 入</span></div>
-                <div data-v-1db03a06="" class="time">2021-12-27 18:34:18</div>
+                <div data-v-30eea19e="" class="address">浑南校区东门<span data-v-30eea19e=""> 入</span></div>
+                <div data-v-30eea19e="" class="time">2021-12-27 18:34:18</div>
             </div>
 
             <div id = "info_box">
                 <input type="file" id="img" onchange="showImg(this.files)">
-                <div>学号: <input type="text" id="stuId" placeholder="10086" /> </div>
+                <div>学号: <input type="text" id="stuId" placeholder="10086"/> </div>
                 <div>姓名: <input type="text" id="stuName" placeholder="张三" /> </div>
                 <div>大门: <input type="text" id="port" placeholder="浑南校区东门" /> </div>
                 <input type="button" value="确定" onclick="update_info()" />
                 <sub style="font-size: smaller;">本操作违反疫情管理办法，使用请自行承担一切责任！</sub>
             </div>
 
-            <div data-v-1db03a06="" class="footer">
-                <div data-v-1db03a06="">© 东北大学</div>
+            <div data-v-30eea19e="" class="footer">
+                <div data-v-30eea19e="">© 东北大学</div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
@@ -83,36 +82,31 @@
         }
     }
 
-    function update_info(){
+    function update_info() {
         var time = new Date();
         var year = time.getFullYear();
         var mon = time.getMonth() + 1;
         var mon_string = mon.toString();
-        if (mon_string.length == 1) mon_string = '0'+mon.toString();
+        if (mon_string.length == 1) mon_string = '0' + mon.toString();
         var date = time.getDate();
         var date_string = date.toString();
-        if (date_string.length == 1) date_string = '0'+date.toString();
+        if (date_string.length == 1) date_string = '0' + date.toString();
         var hour = time.getHours();
         var hour_string = hour.toString();
-        if (hour_string.length == 1) hour_string = '0'+hour.toString();
+        if (hour_string.length == 1) hour_string = '0' + hour.toString();
         var minu = time.getMinutes();
         var minu_string = minu.toString();
-        if (minu_string.length == 1) minu_string = '0'+minu.toString();
+        if (minu_string.length == 1) minu_string = '0' + minu.toString();
         var sec = time.getSeconds();
         var sec_string = sec.toString();
-        if (sec_string.length == 1) sec_string = '0'+sec.toString();
+        if (sec_string.length == 1) sec_string = '0' + sec.toString();
 
         var time_string = year.toString() + '-' + mon_string + '-' + date_string + ' ' + hour_string + ':' + minu_string + ':' + sec_string;
 
-        // var stuId_len = document.getElementById("stuId").value.length;
-        // var stuName_len = ocument.getElementById("stuName").value.length;
-        // var port_len = document.getElementById("port").value.length;
-        // if(stuId_len < 1)
-        
         document.getElementsByClassName("code")[0].innerText = document.getElementById("stuId").value;
-        document.getElementsByClassName("name")[0].innerText = document.getElementById("stuName").value[0] +"*";
+        document.getElementsByClassName("name")[0].innerText = document.getElementById("stuName").value[0] + "*";
         document.getElementsByClassName("address")[0].innerHTML = document.getElementById("port").value +
-        '<span data-v-1db03a06=""> 入</span>';
+            '<span data-v-1db03a06=""> 入</span>';
         document.getElementsByClassName("time")[0].innerText = time_string;
         document.getElementById("info_box").innerHTML = "";
     }
